@@ -1,0 +1,44 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Create react component folder",
+			"command": "mkdir ${input:componentName}",
+			"type": "shell",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
+			"label": "Create react component file",
+			"command": "touch '${input:componentName}.tsx'",
+			"type": "shell",
+			"problemMatcher": [],
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
+			"label": "Create component",
+      "dependsOn": ["Create react component folder", "Create react component file"]
+		},
+	],
+	"inputs": [
+    {
+      "type": "promptString",
+      "id": "componentName",
+			"description": "Component Name"
+    },
+  ]
+}
